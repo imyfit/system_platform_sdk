@@ -124,7 +124,7 @@
 
 `URL:${http://ip:port}/imyfit_gateway_z`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/gateway_z.png)
+![avatar](./image/gateway_z.png)
 
 ### 4.2.Z网关管理2
 
@@ -132,7 +132,7 @@
 
 `URL:${http://ip:port}/imyfit_gateway_z2`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/gateway_z2.png)
+![avatar](./image/gateway_z2.png)
 
 ### 4.3.G网关管理界面
 
@@ -140,7 +140,7 @@
 
 `URL:${http://ip:port}/imyfit_gateway_g`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/gateway_g.png)
+![avatar](./image/gateway_g.png)
 
 ### 4.4.W网关管理界面
 
@@ -148,7 +148,7 @@
 
 `URL:${http://ip:port}/imyfit_gateway_w`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/gateway_w.png)
+![avatar](./image/gateway_w.png)
 
 ### 4.5.终端和人员关系查询界面
 
@@ -156,7 +156,7 @@
 
 `URL:${http://ip:port}/imyfit_worker`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/terminal_worker.png)
+![avatar](./image/terminal_worker.png)
 
 ### 4.6.地图管理界面
 
@@ -164,7 +164,7 @@
 
 `URL:${http://ip:port}/imyfit_kmzmanager`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map.png)
+![avatar](./image/map.png)
 
 ### 4.7.地图图标管理界面
 
@@ -174,13 +174,13 @@
 
 #### 4.7.1.添加标签
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_tag.png)
+![avatar](./image/map_tag.png)
 
 #### 4.7.2.标签管理
 
 `URL:${http://ip:port}/imyfit_maptaglist`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_tag_manager.png)
+![avatar](./image/map_tag_manager.png)
 
 ### 4.8.地图配置界面
 
@@ -188,7 +188,7 @@
 
 `URL:${http://ip:port}****/imyfit_mapsetting`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_setting.png)
+![avatar](./image/map_setting.png)
 
 ### 4.9.围栏管理界面(3DKMZ)
 
@@ -198,13 +198,13 @@
 
 `URL:${http://ip:port}/imyfit_fence`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_fence.png)
+![avatar](./image/map_fence.png)
 
 #### 4.9.2.管理围栏
 
 `URL:${http://ip:port}/imyfit_fence_rule`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_fence_manager.png)
+![avatar](./image/map_fence_manager.png)
 
 ### 4.10.平面电子围栏(PNG)
 
@@ -214,13 +214,13 @@
 
 `URL:${http://ip:port}/imyfit_fence_plane`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_fence_plane.png)
+![avatar](./image/map_fence_plane.png)
 
 #### 4.10.2.电子围栏管理
 
 `URL:${http://ip:port}/imyfit_fence_rule_plane`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_fence_plane_manager.png)
+![avatar](./image/map_fence_plane_manager.png)
 
 ### 4.11.实时定位
 
@@ -228,13 +228,13 @@
 
 `URL:${http://ip:port}/imyfit_realtime`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_realtime.png)
+![avatar](./image/map_realtime.png)
 
 ### 4.12.是内定位(PNG)
 
 `URL:${http://ip:port}/imyfit_realtime_plane`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_realtime_plane.png)
+![avatar](./image/map_realtime_plane.png)
 
 ### 4.13.室外定位
 
@@ -242,7 +242,7 @@
 
 `URL:${http://ip:port}/imyfit_outdoor`
 
-![avatar](D:/document/company_document/git/imyfit-map-engine-sdk/docs/image/map_outdoor.png)
+![avatar](./image/map_outdoor.png)
 
 ## 5.TCP数据传输
 

@@ -1,8 +1,9 @@
 # 云端物联数据融合与分发API
 
-| 版本  | 日期     | 作者   | 备注            |
-| ----- | -------- | ------ | --------------- |
-| 1.0.0 | 20220418 | 舒德军 | 初步完善SDK文档 |
+| 版本   | 日期     | 备注            |
+| ------ | -------- | --------------- |
+| 1.0.0  | 20220418 | 初步完善SDK文档 |
+| 1..1.0 | 20220522 | 增加CWM运动类型 |
 
 **致开发者：**
 
@@ -463,32 +464,33 @@ message对象是SleepData直接调用属性处理：
 
 message对象是**SystemData**直接调用属性处理：
 
-|     属性      |       类型        | 含义                                                         |
-| :-----------: | :---------------: | ------------------------------------------------------------ |
-|      mac      |      String       | 终端设备mac地址                                              |
-|     nbver     |      String       | nb模组版本号【开关机、低电量事件字段】                       |
-|     lver      |      String       | 固件版本【开关机、低电量事件字段】                           |
-|   protocol    |      String       | 协议版本标识【开关机、低电量事件字段】                       |
-|     ccid      |      String       | 物联网卡号【开关机 、低电量事件字段】                        |
-|     imei      |      String       | 设备IMEI号码【开关机、低电量事件】                           |
-|     imsi      |      String       | 国际移动用户识别码                                           |
-|     sport     |  List<SportInfo>  | 具体查看下文SportInfo类型【运动事件触发】                    |
-|     heart     |      Integer      | 当前心率值【心率告警触发】                                   |
-|     temp      |      Double       | 当前温度值【温度异常触发】                                   |
-|     spo2      |      Integer      | 当前血氧值【血氧异常触发】                                   |
-|   pressure    |      Integer      | 当前大气压值【气压异常触发】                                 |
-|   diastolic   |      Integer      | 当前舒张压【血压低压异常触发】                               |
-|   systolic    |      Integer      | 当前收缩压【血压高压异常触发】                               |
-|     check     |      String       | 打卡类型和打卡事件，逗号隔开                                 |
-|      sos      |      String       | sos告警信息【SOS事件触发】；数据格式：纬度,经度,定位方式,定位时间 |
-|   spo2Test    |      String       | 手动测量血氧值（血氧值，测量时间）【手动测量血氧时触发】     |
-| bPressureTest |      String       | 手动测试血压值（高压、低压、测量时间）【手动测量血压触发】   |
-|  strokeTest   |      String       | 手动测量中风风险值（百分比、测量时间）【手动测试中风风险值触发】 |
-|     fence     |      String       | 离开围栏范围：无内容<br>进入围栏范围：直接上报围栏序号+时间+MAC+信号，中间逗号隔开。 |
-|   fallAlarm   |      String       | 跌倒时候触发的跌倒事件；数据格式：纬度,经度,定位方式,定位时间 |
-|   manualGps   |      String       | 主动请求GPS触发事件；数据格式：纬度,经度,定位方式,定位时间   |
-|   sportCwm    | List<Lat2LonData> | CWM运动事件触发，Lat2LonData具体看下文，该字段数据，目前传给客户是空的，需要客户从其他类型数据钟说即MessageFlag.SPORT_CWM获取组装 |
-|    status     |      String       | 表示上报的事件有哪些，如心率和摔倒事件，则：heart\|fall，用"\|"隔开 |
+|         属性         |        类型        | 含义                                                         |
+| :------------------: | :----------------: | ------------------------------------------------------------ |
+|         mac          |       String       | 终端设备mac地址                                              |
+|        nbver         |       String       | nb模组版本号【开关机、低电量事件字段】                       |
+|         lver         |       String       | 固件版本【开关机、低电量事件字段】                           |
+|       protocol       |       String       | 协议版本标识【开关机、低电量事件字段】                       |
+|         ccid         |       String       | 物联网卡号【开关机 、低电量事件字段】                        |
+|         imei         |       String       | 设备IMEI号码【开关机、低电量事件】                           |
+|         imsi         |       String       | 国际移动用户识别码                                           |
+|        sport         |  List<SportInfo>   | 具体查看下文SportInfo类型【运动事件触发】                    |
+|        heart         |      Integer       | 当前心率值【心率告警触发】                                   |
+|         temp         |       Double       | 当前温度值【温度异常触发】                                   |
+|         spo2         |      Integer       | 当前血氧值【血氧异常触发】                                   |
+|       pressure       |      Integer       | 当前大气压值【气压异常触发】                                 |
+|      diastolic       |      Integer       | 当前舒张压【血压低压异常触发】                               |
+|       systolic       |      Integer       | 当前收缩压【血压高压异常触发】                               |
+|        check         |       String       | 打卡类型和打卡事件，逗号隔开                                 |
+|         sos          |       String       | sos告警信息【SOS事件触发】；数据格式：纬度,经度,定位方式,定位时间 |
+|       spo2Test       |       String       | 手动测量血氧值（血氧值，测量时间）【手动测量血氧时触发】     |
+|    bPressureTest     |       String       | 手动测试血压值（高压、低压、测量时间）【手动测量血压触发】   |
+|      strokeTest      |       String       | 手动测量中风风险值（百分比、测量时间）【手动测试中风风险值触发】 |
+|        fence         |       String       | 离开围栏范围：无内容<br>进入围栏范围：直接上报围栏序号+时间+MAC+信号，中间逗号隔开。 |
+|      fallAlarm       |       String       | 跌倒时候触发的跌倒事件；数据格式：纬度,经度,定位方式,定位时间 |
+|      manualGps       |       String       | 主动请求GPS触发事件；数据格式：纬度,经度,定位方式,定位时间   |
+| sportCwmLocationData | List<Lat2LonData>  | CWM运动事件触发，Lat2LonData具体看下文，该字段数据，目前传给客户是空的，需要客户从其他类型数据钟说即MessageFlag.SPORT_CWM获取组装 |
+|       sportCwn       | List<SportCwmInfo> | 具体查看下文SportCwnInfo类型【运动事件触发】                 |
+|        status        |       String       | 表示上报的事件有哪些，如心率和摔倒事件，则：heart\|fall，用"\|"隔开 |
 
 ##### 3.2.5.1. **SportInfo类**
 
@@ -498,7 +500,7 @@ message对象是**SystemData**直接调用属性处理：
 |  endTime  | String | 运动结束时间                                                 |
 |  calorie  |  Long  | 消耗的卡路里                                                 |
 |   step    |  Long  | 走的步数                                                     |
-| sportType | String | 运动类型：无运动类型、徒步、跑步、爬山、球类运动、力量训练、有氧训练、自定义运动 |
+| sportType | String | 运动类型：远足、跑步、跑步机、力量训练、<br>跳绳、室内自行车、山地自行车、高强度训练、<br>自由训练、游泳、登山、瑜伽 |
 
 ##### 3.2.5.2.Lat2LonData类
 
@@ -509,6 +511,20 @@ message对象是**SystemData**直接调用属性处理：
 |     lon      | Double  | 坐标经度         |
 |   accuray    | Integer | 定位经度         |
 | locationType | String  | 定位方式         |
+
+##### 3.2.5.3.SprotCwmInfo类
+
+|     属性     |  类型   | 含义                                                         |
+| :----------: | :-----: | ------------------------------------------------------------ |
+|  startTime   | String  | 运动开始时间                                                 |
+|  sportTime   |  Long   | 运动时长                                                     |
+|   calorie    |  Long   | 消耗的卡路里                                                 |
+|     step     |  Long   | 走的步数                                                     |
+|  sportType   | String  | 运动类型：无运动类型、徒步、跑步、爬山、<br>球类运动、力量训练、有氧训练、自定义运动 |
+| maxHeartRate | Integer | 最大心率                                                     |
+| avgHeartRate | Integer | 平均心率                                                     |
+|   distance   |  Long   | 距离                                                         |
+|   avgSpeed   | Integer | 平均配速                                                     |
 
 #### 3.2.6.CWM运动事件
 

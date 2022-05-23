@@ -7,9 +7,9 @@
 
 **致开发者：**
 
-1. 若需要硬件请联系销售人员,  https://www.imyfit.com
+1. 若需要硬件请联系销售人员,  https&#58;//www.imyfit.com
 2. 本PDF协议文档可能不是最新版本
-3. 若协议有更新，不再另行通知，强烈建议开发者到 https://imyfit.gitee.io 获取最新协议
+3. 若协议有更新，不再另行通知，强烈建议开发者到 https&#58;//imyfit.gitee.io 获取最新协议
 4. 若对协议不理解或发现协议有bug请到issues区域提出（或者提交一个 pull request），愿我们的付出对您的开发事半功倍。
 
 ------
@@ -226,7 +226,7 @@ message对象是**B10Data**直接调用属性处理：
 |    gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
 |       rssi       | Integer | 网关的rssi值                                                 |
 |    localType     | String  | 定位类型，查看2.3                                            |
-|    createTime    | String  | 创建时间（2022-04-08 00:00:00）                              |
+|    createTime    | String  | 创建时间（2022-04-08 00&#58;00&#58;00）                      |
 |   locationTime   | String  | 数据上传的时间                                               |
 |    heartRate     | Integer | 心率                                                         |
 |       step       | Integer | 步数                                                         |
@@ -259,7 +259,7 @@ message对象是**X6Data**直接调用属性处理：
 |    gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
 |       rssi       | Integer | 网关的rssi值                                                 |
 |    localType     | String  | 定位类型，查看2.3                                            |
-|    createTime    | String  | 创建时间（2022-04-08 00:00:00）                              |
+|    createTime    | String  | 创建时间（2022-04-08 00&#58;00&#58;00）                      |
 |   locationTime   | String  | 数据上传的时间                                               |
 |    heartRate     | Integer | 心率                                                         |
 |       step       | Integer | 步数                                                         |
@@ -291,7 +291,7 @@ message对象是**X3WData**直接调用属性处理：
 |   gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
 |      rssi       | Integer | 网关的rssi值                                                 |
 |    localType    | String  | 定位类型，查看2.3                                            |
-|   createTime    | String  | 创建时间（2022-04-08 00:00:00）                              |
+|   createTime    | String  | 创建时间（2022-04-08 00&#58;00&#58;00）                      |
 |  locationTime   | String  | 数据上传的时间                                               |
 |    heartRate    | Integer | 心率                                                         |
 |      step       | Integer | 步数                                                         |
@@ -317,7 +317,7 @@ message对象是**C5SData**直接调用属性处理：
 |   gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
 |      rssi       | Integer | 网关的rssi值                                                 |
 |    localType    | String  | 定位类型，查看2.3                                            |
-|   createTime    | String  | 创建时间（2022-04-08 00:00:00）                              |
+|   createTime    | String  | 创建时间（2022-04-08 00&#58;00&#58;00）                      |
 |  locationTime   | String  | 数据上传的时间                                               |
 |    heartRate    | Integer | 心率                                                         |
 |      step       | Integer | 步数                                                         |
@@ -347,7 +347,7 @@ message对象是**R9Data**直接调用属性处理：
 |    gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
 |       rssi       | Integer | 网关的rssi值                                                 |
 |    localType     | String  | 定位类型，查看2.3                                            |
-|    createTime    | String  | 创建时间（2022-04-08 00:00:00）                              |
+|    createTime    | String  | 创建时间（2022-04-08 00&#58;00&#58;00）                      |
 |   locationTime   | String  | 数据上传的时间                                               |
 |    heartRate     | Integer | 心率                                                         |
 |       step       | Integer | 步数                                                         |
@@ -449,7 +449,7 @@ message对象是SleepData直接调用属性处理：
 |    pack    | Integer | 当前包数，即第几包                                           |
 |    date    | String  | 日期                                                         |
 | createTime | String  | 本地服务器获取数据时间（2022-04-09）                         |
-|   sleep    | String  | 数据逗号隔开<br>sleepType为1时：<br>0:活动，1：浅度，2：深度 3：未监测<br>sleepType为2时：<br>0 清醒, 1 浅睡, 2 深睡, 3 快速动眼, 255 无效数据 |
+|   sleep    | String  | 数据逗号隔开<br>sleepType为1时：<br>0&#58;活动，1：浅度，2：深度 3：未监测<br>sleepType为2时：<br>0 清醒, 1 浅睡, 2 深睡, 3 快速动眼, 255 无效数据 |
 | sleepType  | Integer | 睡眠数据类型：1、2                                           |
 | sleepDate  | String  | 睡眠数据日期：20220411                                       |
 | sleepTime  | String  | 数据逗号隔开<br>sleepType为1时：每个时间点对应每个sleep的状态<br>sleepType为2时：每个时间点对应的sleep，表示该时间点切换的睡眠状态 |
@@ -549,34 +549,34 @@ message对象是**SportCwm**直接调用属性处理：
 
 ```json
 {
-	"type": "indoor",
-	"data": {
-		"battery": 32,
-		"createTime": "2022-04-12 09:18:28",
-		"diastolic": 0,
-		"fall": "正常",
-		"gatewayMac": "8cd495001269",
-		"heartRate": 0,
-		"hrv": 0,
-		"localType": "bluetooth",
-		"locationTime": "2022-03-29 01:10:15",
-		"mac": "d5a414249659",
-		"restingHeartRate": 65,
-		"rssi": 34,
-		"silent": "静",
-		"sleep": "清醒",
-		"sos": "off",
-		"spo2": 0,
-		"sportMode": "off",
-		"step": 58,
-		"systolic": 0,
-		"temperatureCore": 35.1,
-		"temperatureEnvn": 0.0,
-		"temperatureSkin": 0.0,
-		"terminalType": "B10C",
-		"wear": "佩戴",
-		"x": 0.0,
-		"y": 0.0
+	"type"&#58; "indoor",
+	"data"&#58; {
+		"battery"&#58; 32,
+		"createTime"&#58; "2022-04-12 09&#58;18&#58;28",
+		"diastolic"&#58; 0,
+		"fall"&#58; "正常",
+		"gatewayMac"&#58; "8cd495001269",
+		"heartRate"&#58; 0,
+		"hrv"&#58; 0,
+		"localType"&#58; "bluetooth",
+		"locationTime"&#58; "2022-03-29 01&#58;10&#58;15",
+		"mac"&#58; "d5a414249659",
+		"restingHeartRate"&#58; 65,
+		"rssi"&#58; 34,
+		"silent"&#58; "静",
+		"sleep"&#58; "清醒",
+		"sos"&#58; "off",
+		"spo2"&#58; 0,
+		"sportMode"&#58; "off",
+		"step"&#58; 58,
+		"systolic"&#58; 0,
+		"temperatureCore"&#58; 35.1,
+		"temperatureEnvn"&#58; 0.0,
+		"temperatureSkin"&#58; 0.0,
+		"terminalType"&#58; "B10C",
+		"wear"&#58; "佩戴",
+		"x"&#58; 0.0,
+		"y"&#58; 0.0
 	}
 }
 ```
@@ -591,23 +591,23 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type": "outdoor",
-		"data": {
-			"battery": 78,
-			"calorie": 784,
-			"createTime": "2022-04-10 15:49:08",
-			"csq": 15,
-			"diastolic": 0,
-			"heart": 0,
-			"hrv": "0.000,0.000,0.000,0.000,0.000",
-			"mac": "da3d83dbc873",
-			"spo2": 0,
-			"step": 0,
-			"systolic": 0,
-			"temperatureCore": 0.0,
-			"temperatureEvn": 26.28,
-			"temperatureSkin": 0.0,
-			"wear": "No"
+		"type"&#58; "outdoor",
+		"data"&#58; {
+			"battery"&#58; 78,
+			"calorie"&#58; 784,
+			"createTime"&#58; "2022-04-10 15&#58;49&#58;08",
+			"csq"&#58; 15,
+			"diastolic"&#58; 0,
+			"heart"&#58; 0,
+			"hrv"&#58; "0.000,0.000,0.000,0.000,0.000",
+			"mac"&#58; "da3d83dbc873",
+			"spo2"&#58; 0,
+			"step"&#58; 0,
+			"systolic"&#58; 0,
+			"temperatureCore"&#58; 0.0,
+			"temperatureEvn"&#58; 26.28,
+			"temperatureSkin"&#58; 0.0,
+			"wear"&#58; "No"
 		}
 	}
 	```
@@ -616,16 +616,16 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type": "heartRate",
-		"data": {
-			"count": 60,
-			"createTime": "2022-04-10 15:49:11",
-			"date": "20220410",
-			"heartOfflineData": "96,97,95,96,97,95,94,93,96,97,95,98,112,107,102,98,98,99,102,101,96,96,94,92,93,91,93,93,93,91,92,92,92,93,93,90,92,88,85,86,89,90,92,92,93,95,92,91,96,96,95,89,87,86,90,92,92,92,90,91",
-			"interval": 5,
-			"mac": "ce28f7bb70c6",
-			"pack": 189,
-			"total": 288
+		"type"&#58; "heartRate",
+		"data"&#58; {
+			"count"&#58; 60,
+			"createTime"&#58; "2022-04-10 15&#58;49&#58;11",
+			"date"&#58; "20220410",
+			"heartOfflineData"&#58; "96,97,95,96,97,95,94,93,96,97,95,98,112,107,102,98,98,99,102,101,96,96,94,92,93,91,93,93,93,91,92,92,92,93,93,90,92,88,85,86,89,90,92,92,93,95,92,91,96,96,95,89,87,86,90,92,92,92,90,91",
+			"interval"&#58; 5,
+			"mac"&#58; "ce28f7bb70c6",
+			"pack"&#58; 189,
+			"total"&#58; 288
 		}
 	}
 	```
@@ -634,15 +634,15 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type": "location",
-		"data": {
-			"accuracy": 9730,
-			"createTime": "2022-04-10 16:03:03",
-			"lat": 32.163272,
-			"locationTime": "2022-04-10 19:02:57",
-			"locationType": "cat1",
-			"lon": 34.817759,
-			"mac": "c42612684dc6"
+		"type"&#58; "location",
+		"data"&#58; {
+			"accuracy"&#58; 9730,
+			"createTime"&#58; "2022-04-10 16&#58;03&#58;03",
+			"lat"&#58; 32.163272,
+			"locationTime"&#58; "2022-04-10 19&#58;02&#58;57",
+			"locationType"&#58; "cat1",
+			"lon"&#58; 34.817759,
+			"mac"&#58; "c42612684dc6"
 		}
 	}
 	```
@@ -651,20 +651,20 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type": "sleep",
-		"data": {
-			"allSleep": 286,
-			"createTime": "2022-04-10 16:17:37",
-			"date": "",
-			"deepSleep": 44,
-			"eye": 31,
-			"lightSleep": 208,
-			"mac": "c42612684dc6",
-			"pack": 1,
-			"sleepDate": "1,0,1,3,1,2,1,2,1,0",
-			"sleepTime": "00:00,01:17,01:20,01:33,02:04,03:07,03:27,04:06,04:30,04:46",
-			"sleepType": 2,
-			"total": 2
+		"type"&#58; "sleep",
+		"data"&#58; {
+			"allSleep"&#58; 286,
+			"createTime"&#58; "2022-04-10 16&#58;17&#58;37",
+			"date"&#58; "",
+			"deepSleep"&#58; 44,
+			"eye"&#58; 31,
+			"lightSleep"&#58; 208,
+			"mac"&#58; "c42612684dc6",
+			"pack"&#58; 1,
+			"sleepDate"&#58; "1,0,1,3,1,2,1,2,1,0",
+			"sleepTime"&#58; "00&#58;00,01&#58;17,01&#58;20,01&#58;33,02&#58;04,03&#58;07,03&#58;27,04&#58;06,04&#58;30,04&#58;46",
+			"sleepType"&#58; 2,
+			"total"&#58; 2
 		}
 	}
 	```
@@ -673,12 +673,12 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type": "system",
-		"data": {
-			"createTime": "2022-04-10 16:47:51",
-			"fallAlarm": "32.1303459,34.7958939,cat1",
-			"mac": "c42612684dc6",
-			"status": "fall"
+		"type"&#58; "system",
+		"data"&#58; {
+			"createTime"&#58; "2022-04-10 16&#58;47&#58;51",
+			"fallAlarm"&#58; "32.1303459,34.7958939,cat1",
+			"mac"&#58; "c42612684dc6",
+			"status"&#58; "fall"
 		}
 	}
 	```

@@ -1,9 +1,9 @@
 # 云端物联数据融合与分发API
 
-| 版本   | 日期     | 备注            |
-| ------ | -------- | --------------- |
-| 1.0.0  | 20220418 | 初步完善SDK文档 |
-| 1..1.0 | 20220522 | 增加CWM运动类型 |
+| 版本  | 日期     | 备注            |
+| ----- | -------- | --------------- |
+| 1.0.0 | 20220418 | 初步完善SDK文档 |
+| 1.1.0 | 20220522 | 增加CWM运动类型 |
 
 **致开发者：**
 
@@ -216,6 +216,8 @@
 
 #### 3.1.1. B10系列
 
+包含手环B10和B10C的数据广播
+
 message对象是**B10Data**直接调用属性处理：
 
 |       属性       |  类型   | 含义                                                         |
@@ -247,9 +249,11 @@ message对象是**B10Data**直接调用属性处理：
 |    sportMode     | String  | 是否开启运动模式\|：on、off                                  |
 |       fall       | String  | 是否跌倒：跌倒、正常                                         |
 
-#### 3.1.2.X6
+#### 3.1.2. X系列
 
-message对象是**X6Data**直接调用属性处理：
+ 包含手环X1，X3和X6的数据广播
+
+message对象是**XData**直接调用属性处理：
 
 |       属性       |  类型   | 含义                                                         |
 | :--------------: | :-----: | ------------------------------------------------------------ |
@@ -279,33 +283,7 @@ message对象是**X6Data**直接调用属性处理：
 |       sos        | String  | SOS求救：on、off                                             |
 |    sportMode     | String  | 是否开启运动模式\|：on、off                                  |
 
-#### 3.1.3. X3W
-
-message对象是**X3WData**直接调用属性处理：
-
-|      属性       |  类型   | 含义                                                         |
-| :-------------: | :-----: | ------------------------------------------------------------ |
-|       mac       | String  | 终端设备mac地址                                              |
-|  terminalType   | String  | 终端设备类型（B10C）                                         |
-|     battery     | Integer | 电池电量                                                     |
-|   gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
-|      rssi       | Integer | 网关的rssi值                                                 |
-|    localType    | String  | 定位类型，查看2.3                                            |
-|   createTime    | String  | 创建时间（2022-04-08 00&#58;00&#58;00）                      |
-|  locationTime   | String  | 数据上传的时间                                               |
-|    heartRate    | Integer | 心率                                                         |
-|      step       | Integer | 步数                                                         |
-|     silent      | String  | 运动状态：动、静                                             |
-|      wear       | String  | 是否佩戴：佩戴、未佩戴                                       |
-|      sleep      | String  | 睡眠状态：浅睡、深睡、清醒                                   |
-| temperatureEnvn | Double  | 环境温度                                                     |
-| temperatureSkin | Double  | 体表温度                                                     |
-| temperatureCore | Double  | 体核温度                                                     |
-|        x        | Double  | 定位数据：A0A值才有用                                        |
-|        y        | Double  | 定位数据：A0A值才有用                                        |
-|    sportMode    | String  | 是否开启运动模式：on、off                                    |
-
-#### 3.1.4. C5S
+#### 3.1.3. C5S
 
 message对象是**C5SData**直接调用属性处理：
 
@@ -335,7 +313,7 @@ message对象是**C5SData**直接调用属性处理：
 |       hrv       | Integer | hrv值                                                        |
 |    sportMode    | String  | 是否开启运动模式\|：on、off                                  |
 
-#### 3.1.5. R9
+#### 3.1.4. R9
 
 message对象是**R9Data**直接调用属性处理：
 

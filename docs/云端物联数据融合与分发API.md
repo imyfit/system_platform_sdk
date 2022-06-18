@@ -90,7 +90,7 @@
 
 **注：**版本根据我方给的jar包版本而定
 
-1. ### 导入后，需要做以下操作，java为例：
+1. 导入后，需要做以下操作，java为例：
 
   1. 新建一个CallBack类继承AbstractImyFitCallBack抽象类
 

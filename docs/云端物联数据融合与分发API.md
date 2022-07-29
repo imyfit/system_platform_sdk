@@ -278,8 +278,8 @@ message对象是**XData**直接调用属性处理：
 |     systolic     | Integer | 收缩压                                                       |
 |    diastolic     | Intger  | 舒张压                                                       |
 |       spo2       | Integer | 血氧                                                         |
-|      charge      | Integer | 充电状态：充电中、未充电                                     |
-| chargeIntoStatus | Integer | 充电器：充电器插入、充电器未插入                             |
+|      charge      | String  | 充电状态：充电中、未充电                                     |
+| chargeIntoStatus | String  | 充电器：充电器插入、充电器未插入                             |
 |       sos        | String  | SOS求救：on、off                                             |
 |    sportMode     | String  | 是否开启运动模式\|：on、off                                  |
 
@@ -340,8 +340,8 @@ message对象是**R9Data**直接调用属性处理：
 |     systolic     | Integer | 收缩压                                                       |
 |    diastolic     | Intger  | 舒张压                                                       |
 |       spo2       | Integer | 血氧                                                         |
-|      charge      | Integer | 充电状态：充电中、未充电                                     |
-| chargeIntoStatus | Integer | 充电器：充电器插入、充电器未插入                             |
+|      charge      | String  | 充电状态：充电中、未充电                                     |
+| chargeIntoStatus | String  | 充电器：充电器插入、充电器未插入                             |
 |       sos        | String  | SOS求救：on、off                                             |
 |     calorie      | Integer | 消耗的热量                                                   |
 |       band       | String  | 是否断带：on（断带）、off（未断带）                          |
@@ -527,34 +527,34 @@ message对象是**SportCwm**直接调用属性处理：
 
 ```json
 {
-	"type"&#58; "indoor",
-	"data"&#58; {
-		"battery"&#58; 32,
-		"createTime"&#58; "2022-04-12 09&#58;18&#58;28",
-		"diastolic"&#58; 0,
-		"fall"&#58; "正常",
-		"gatewayMac"&#58; "8cd495001269",
-		"heartRate"&#58; 0,
-		"hrv"&#58; 0,
-		"localType"&#58; "bluetooth",
-		"locationTime"&#58; "2022-03-29 01&#58;10&#58;15",
-		"mac"&#58; "d5a414249659",
-		"restingHeartRate"&#58; 65,
-		"rssi"&#58; 34,
-		"silent"&#58; "静",
-		"sleep"&#58; "清醒",
-		"sos"&#58; "off",
-		"spo2"&#58; 0,
-		"sportMode"&#58; "off",
-		"step"&#58; 58,
-		"systolic"&#58; 0,
-		"temperatureCore"&#58; 35.1,
-		"temperatureEnvn"&#58; 0.0,
-		"temperatureSkin"&#58; 0.0,
-		"terminalType"&#58; "B10C",
-		"wear"&#58; "佩戴",
-		"x"&#58; 0.0,
-		"y"&#58; 0.0
+	"type": "indoor",
+	"data": {
+		"battery": 32,
+		"createTime": "2022-04-12 09:18:28",
+		"diastolic": 0,
+		"fall": "正常",
+		"gatewayMac": "8cd495001269",
+		"heartRate": 0,
+		"hrv": 0,
+		"localType": "bluetooth",
+		"locationTime": "2022-03-29 01:10:15",
+		"mac": "d5a414249659",
+		"restingHeartRate": 65,
+		"rssi": 34,
+		"silent": "静",
+		"sleep": "清醒",
+		"sos": "off",
+		"spo2": 0,
+		"sportMode": "off",
+		"step": 58,
+		"systolic": 0,
+		"temperatureCore": 35.1,
+		"temperatureEnvn": 0.0,
+		"temperatureSkin": 0.0,
+		"terminalType": "B10C",
+		"wear": "佩戴",
+		"x": 0.0,
+		"y": 0.0
 	}
 }
 ```
@@ -569,23 +569,23 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type"&#58; "outdoor",
-		"data"&#58; {
-			"battery"&#58; 78,
-			"calorie"&#58; 784,
-			"createTime"&#58; "2022-04-10 15&#58;49&#58;08",
-			"csq"&#58; 15,
-			"diastolic"&#58; 0,
-			"heart"&#58; 0,
-			"hrv"&#58; "0.000,0.000,0.000,0.000,0.000",
-			"mac"&#58; "da3d83dbc873",
-			"spo2"&#58; 0,
-			"step"&#58; 0,
-			"systolic"&#58; 0,
-			"temperatureCore"&#58; 0.0,
-			"temperatureEvn"&#58; 26.28,
-			"temperatureSkin"&#58; 0.0,
-			"wear"&#58; "No"
+		"type": "outdoor",
+		"data": {
+			"battery": 78,
+			"calorie": 784,
+			"createTime": "2022-04-10 15:49:08",
+			"csq": 15,
+			"diastolic": 0,
+			"heart": 0,
+			"hrv": "0.000,0.000,0.000,0.000,0.000",
+			"mac": "da3d83dbc873",
+			"spo2": 0,
+			"step": 0,
+			"systolic": 0,
+			"temperatureCore": 0.0,
+			"temperatureEvn": 26.28,
+			"temperatureSkin": 0.0,
+			"wear": "No"
 		}
 	}
 	```
@@ -594,16 +594,16 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type"&#58; "heartRate",
-		"data"&#58; {
-			"count"&#58; 60,
-			"createTime"&#58; "2022-04-10 15&#58;49&#58;11",
-			"date"&#58; "20220410",
-			"heartOfflineData"&#58; "96,97,95,96,97,95,94,93,96,97,95,98,112,107,102,98,98,99,102,101,96,96,94,92,93,91,93,93,93,91,92,92,92,93,93,90,92,88,85,86,89,90,92,92,93,95,92,91,96,96,95,89,87,86,90,92,92,92,90,91",
-			"interval"&#58; 5,
-			"mac"&#58; "ce28f7bb70c6",
-			"pack"&#58; 189,
-			"total"&#58; 288
+		"type": "heartRate",
+		"data": {
+			"count": 60,
+			"createTime": "2022-04-10 15:49:11",
+			"date": "20220410",
+			"heartOfflineData": "96,97,95,96,97,95,94,93,96,97,95,98,112,107,102,98,98,99,102,101,96,96,94,92,93,91,93,93,93,91,92,92,92,93,93,90,92,88,85,86,89,90,92,92,93,95,92,91,96,96,95,89,87,86,90,92,92,92,90,91",
+			"interval": 5,
+			"mac": "ce28f7bb70c6",
+			"pack": 189,
+			"total": 288
 		}
 	}
 	```
@@ -612,15 +612,15 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type"&#58; "location",
-		"data"&#58; {
-			"accuracy"&#58; 9730,
-			"createTime"&#58; "2022-04-10 16&#58;03&#58;03",
-			"lat"&#58; 32.163272,
-			"locationTime"&#58; "2022-04-10 19&#58;02&#58;57",
-			"locationType"&#58; "cat1",
-			"lon"&#58; 34.817759,
-			"mac"&#58; "c42612684dc6"
+		"type": "location",
+		"data": {
+			"accuracy": 9730,
+			"createTime": "2022-04-10 16:03:03",
+			"lat": 32.163272,
+			"locationTime": "2022-04-10 19:02:57",
+			"locationType": "cat1",
+			"lon": 34.817759,
+			"mac": "c42612684dc6"
 		}
 	}
 	```
@@ -629,20 +629,20 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type"&#58; "sleep",
-		"data"&#58; {
-			"allSleep"&#58; 286,
-			"createTime"&#58; "2022-04-10 16&#58;17&#58;37",
-			"date"&#58; "",
-			"deepSleep"&#58; 44,
-			"eye"&#58; 31,
-			"lightSleep"&#58; 208,
-			"mac"&#58; "c42612684dc6",
-			"pack"&#58; 1,
-			"sleepDate"&#58; "1,0,1,3,1,2,1,2,1,0",
-			"sleepTime"&#58; "00&#58;00,01&#58;17,01&#58;20,01&#58;33,02&#58;04,03&#58;07,03&#58;27,04&#58;06,04&#58;30,04&#58;46",
-			"sleepType"&#58; 2,
-			"total"&#58; 2
+		"type": "sleep",
+		"data": {
+			"allSleep": 286,
+			"createTime": "2022-04-10 16:17:37",
+			"date": "",
+			"deepSleep": 44,
+			"eye": 31,
+			"lightSleep": 208,
+			"mac": "c42612684dc6",
+			"pack": 1,
+			"sleepDate": "1,0,1,3,1,2,1,2,1,0",
+			"sleepTime": "00:00,01:17,01:20,01:33,02:04,03:07,03:27,04:06,04:30,04:46",
+			"sleepType": 2,
+			"total": 2
 		}
 	}
 	```
@@ -651,12 +651,12 @@ message对象是**SportCwm**直接调用属性处理：
 
 	```json
 	{
-		"type"&#58; "system",
-		"data"&#58; {
-			"createTime"&#58; "2022-04-10 16&#58;47&#58;51",
-			"fallAlarm"&#58; "32.1303459,34.7958939,cat1",
-			"mac"&#58; "c42612684dc6",
-			"status"&#58; "fall"
+		"type": "system",
+		"data": {
+			"createTime": "2022-04-10 16:47:51",
+			"fallAlarm": "32.1303459,34.7958939,cat1",
+			"mac": "c42612684dc6",
+			"status": "fall"
 		}
 	}
 	```

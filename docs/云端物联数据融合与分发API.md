@@ -18,7 +18,7 @@
 
 ### 1.1.概述
 
-该文档用于使用者对接深圳吾控健康科技有限公司的终端设备，通过蓝牙网关，UWB，NB以及CAT1等数据方式进行数据的对接，便于客户直接使用解析后的数据，用于自己的业务系统，免去客户因解析数据带来诸多麻烦，同时便于客户节约大把时间专注于自己的业务系统。
+该文档用于使用者对接深圳吾控健康科技有限公司的终端设备，通过蓝牙网关，UWB以及CAT1等数据方式进行数据的对接，便于客户直接使用解析后的数据，用于自己的业务系统，免去客户因解析数据带来诸多麻烦，同时便于客户节约大把时间专注于自己的业务系统。
 
 ------
 
@@ -30,7 +30,7 @@
 
 | 属性  | 含义                                         |
 | :---: | -------------------------------------------- |
-|  NB   | 针对NB,CAT1数据的服务器                      |
+|  NB   | 针对CAT1数据的服务器                         |
 | LOCAL | 针对室内定位数据的服务器如：蓝牙、UWB、AOA等 |
 
 ### 2.2.MessageFlag枚举
@@ -40,16 +40,16 @@
 |    属性     |   type值    | 含义                                       |
 | :---------: | :---------: | ------------------------------------------ |
 |   INDOOR    |   indoor    | 室内数据，即蓝牙、aoa、uwb、beacon定位数据 |
-|   OUTDOOR   |   outdoor   | NB,CAT1上传的实时定位数据                  |
-| HEART_RATE  |  heartRate  | NB,CAT1定时上传的心率包                    |
-|    SLEEP    |    sleep    | NB,CAT1上传的睡眠数据                      |
-|  LOCATION   |  location   | NB,CAT1上传的纯定位数据                    |
-|    WI-FI    |    wi-fi    | NB,CAT1上传的Wifi定位数据                  |
-|   SYSTEM    |   system    | NB,CAT1各种事件数据                        |
-|   CALORIE   |   calorie   | NB,CAT1上传的热量包数据包                  |
-|    SPO2     |    spo2     | NB,CAT1上传的血氧数据包                    |
-| TEMPERATURE | temperature | NB,CAT1上传的温度数据包                    |
-|     BP      |     bp      | NB,CAT1上传的血压数据包                    |
+|   OUTDOOR   |   outdoor   | CAT1上传的实时定位数据                     |
+| HEART_RATE  |  heartRate  | CAT1定时上传的心率包                       |
+|    SLEEP    |    sleep    | CAT1上传的睡眠数据                         |
+|  LOCATION   |  location   | CAT1上传的纯定位数据                       |
+|    WI-FI    |    wi-fi    | CAT1上传的Wifi定位数据                     |
+|   SYSTEM    |   system    | CAT1各种事件数据                           |
+|   CALORIE   |   calorie   | CAT1上传的热量包数据包                     |
+|    SPO2     |    spo2     | CAT1上传的血氧数据包                       |
+| TEMPERATURE | temperature | CAT1上传的温度数据包                       |
+|     BP      |     bp      | CAT1上传的血压数据包                       |
 |  SPORT_CWM  |  sport-cwm  | CWM运动数据                                |
 
 ### 2.3.LocationType枚举
@@ -350,7 +350,7 @@ message对象是**R9Data**直接调用属性处理：
 
 ### 3.2. 室外数据对接
 
-用于对接室外的NB、CAT1、IOT的室外数据，获取用于健康体征以及相关的室外定位信息。
+用于对接室外的CAT1、IOT的室外数据，获取用于健康体征以及相关的室外定位信息。
 
 #### 3.2.1. 心率数据
 
@@ -563,7 +563,7 @@ message对象是**SportCwm**直接调用属性处理：
 
 ### 4.2. 室外数据对接
 
-用于对接室外的NB、CAT1、IOT的室外数据，获取用于健康体征以及相关的室外定位信息。
+用于对接室外的CAT1、IOT的室外数据，获取用于健康体征以及相关的室外定位信息。
 
 1. 室外定位数据，如果没有lat和lon则表示该地段没有gps信号
 

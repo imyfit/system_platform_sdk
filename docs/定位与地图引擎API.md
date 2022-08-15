@@ -423,7 +423,7 @@
 @#@@@"{
 	"indoor": {
 		"battery": 58,
-		"createTime": "2021-07-20T10:54:40.566",
+		"createTime": "2021-07-20 10:54:40",
 		"diastolic": 0,
 		"gatewayMac": "8cd49500128e",
 		"heartRate": 0,
@@ -432,7 +432,7 @@
 		"silent": "false",
 		"band": "off",
 		"rssi": 40,
-		"sleep": "380#200#180  ",
+		"sleep": "清醒",
 		"sos": "off",
 		"spo2": 0,
 		"dimension": "2",
@@ -440,46 +440,50 @@
 		"systolic": 0,
 		"terminalMac": "f07a8f0db21a",
 		"terminalType": "R9",
-		"wearStatus": "1",
+		"wear": "佩戴",
 		"x": 0.1764766424894333,
 		"y": 0.010889263823628426,
 		"quality": "3",
 		"temperatureEnv": 33.4,
 		"temperatureSkin": 35.6,
-		"temperatureCore": 36.5
+		"temperatureCore": 36.5,
+        "charge":"充电中",
+        "chargeIntoStatus":"充电器插入",
 	}
 }"@*@@@  
 ```
 
 字段解析：
 
-| 字段名称        | 字段含义                | 备注                                                         |
-| --------------- | ----------------------- | ------------------------------------------------------------ |
-| battery         | 电池电量                | 可用于判断电池电量是否过低触发低电量告警                     |
-| createTime      | 数据从解析中心发送时间  |                                                              |
-| localtionTime   | 终端设备的时间          |                                                              |
-| gatewayMac      | 终端所在区域网关mac地址 | 如果，有网关需要作为告警网关，可用于业务做区域告警处理，如果该key有值表明实在蓝牙网关定位 |
-| panid           | UWB网关的区域名称       | 如果该key有值表明是UWB区域定位                               |
-| heartrate       | 心率                    |                                                              |
-| slient          | 是否是静止状态          | 分为：true，false                                            |
-| band            | 是否断带                | 分为：on，off                                                |
-| dimension       | 几维区域                | UWB网关定位才有此值                                          |
-| sleep           | 睡眠数据                | 总睡时长#深睡时长#浅睡时长                                   |
-| sos             | 是否开启sos告警         | 分为：on，off                                                |
-| spo2            | 血氧                    |                                                              |
-| quality         | 结算质量                |                                                              |
-| step            | 步数                    |                                                              |
-| systolic        | 收缩压                  |                                                              |
-| diastolic       | 舒张压                  |                                                              |
-| wearStatus      | 是否佩戴                |                                                              |
-| temperatureEnv  | 环境温度                |                                                              |
-| temperatureSkin | 体表温度                |                                                              |
-| temperatureCore | 人体真实温度            |                                                              |
-| x               | 室内定位x坐标           |                                                              |
-| y               | 室内定位y坐标           |                                                              |
-| rssi            | 网关的rssi值            |                                                              |
-| terminalMac     | 终端mac地址             |                                                              |
-| terminalType    | 终端类型                |                                                              |
+| 字段名称         | 字段含义                | 备注                                                         |
+| ---------------- | ----------------------- | ------------------------------------------------------------ |
+| battery          | 电池电量                | 可用于判断电池电量是否过低触发低电量告警                     |
+| createTime       | 数据从解析中心发送时间  |                                                              |
+| localtionTime    | 终端设备的时间          |                                                              |
+| gatewayMac       | 终端所在区域网关mac地址 | 如果，有网关需要作为告警网关，可用于业务做区域告警处理，如果该key有值表明实在蓝牙网关定位 |
+| panid            | UWB网关的区域名称       | 如果该key有值表明是UWB区域定位                               |
+| heartRate        | 心率                    |                                                              |
+| slient           | 是否是静止状态          | 分为：true，false                                            |
+| band             | 是否断带                | 分为：on，off                                                |
+| dimension        | 几维区域                | UWB网关定位才有此值                                          |
+| sleep            | 睡眠数据                | 总睡时长#深睡时长#浅睡时长                                   |
+| sos              | 是否开启sos告警         | 分为：on，off                                                |
+| spo2             | 血氧                    |                                                              |
+| quality          | 结算质量                |                                                              |
+| step             | 步数                    |                                                              |
+| systolic         | 收缩压                  |                                                              |
+| diastolic        | 舒张压                  |                                                              |
+| wear             | 是否佩戴                | 佩戴，未佩戴                                                 |
+| temperatureEnv   | 环境温度                |                                                              |
+| temperatureSkin  | 体表温度                |                                                              |
+| temperatureCore  | 人体真实温度            |                                                              |
+| x                | 室内定位x坐标           |                                                              |
+| y                | 室内定位y坐标           |                                                              |
+| rssi             | 网关的rssi值            |                                                              |
+| terminalMac      | 终端mac地址             |                                                              |
+| terminalType     | 终端类型                |                                                              |
+| charge           | 充电状态                | 充电中、未充电                                               |
+| chargeIntoStatus | 充电器                  | 充电器插入、充电器未插入                                     |
 
 #### 5.1.4.X3W
 
@@ -772,27 +776,29 @@
 
 ```json
 @#@@@"{
-	"fence": {
+	"type":"fence"
+	"data": {
 		"name": "张三",
-		"alarmTime": "2021-07-20T10:54:40.566",
+		"time": "2021-07-20 10:54:40",
 		"fenceName": "厕所",
-		"alarmType": "滞留",
-		"alarm": "start",
-		"terminalMac": "f07a8f0db21a"
+		"warnType": "in",
+		"fenceType": "start",
+		"mac": "f07a8f0db21a"
 	}
 }"@*@@@  
 ```
 
 字段解析：
 
-| 字段名称    | 字段含义              | 备注                   |
-| ----------- | --------------------- | ---------------------- |
-| name        | 用户名称              |                        |
-| alarmTime   | 告警时间              |                        |
-| fenceName   | 围栏名称              |                        |
-| alarmType   | 告警类型              | 分为：出界，入界，滞留 |
-| alarm       | 开始还是结束          | 分为：start，end       |
-| terminalMac | 告警的终端设备mac地址 |                        |
+| 字段名称  | 字段含义              | 备注                                            |
+| --------- | --------------------- | ----------------------------------------------- |
+| type      | fence                 |                                                 |
+| name      | 用户名称              |                                                 |
+| time      | 告警时间              |                                                 |
+| fenceName | 告警地方（围栏名称）  |                                                 |
+| warnType  | 告警类型              | 分为：in（入界），out（出界），stranded（滞留） |
+| fenceType | 开始还是结束          | 分为：start，end                                |
+| mac       | 告警的终端设备mac地址 |                                                 |
 
 #### 5.3.2.高心率
 
@@ -800,70 +806,99 @@
 
 ```json
 @#@@@"{
-	"highHeart": {
+	"type":"heartRate",
+	"data": {
 		"name": "张三",
-		"createTime": "2021-07-20T10:54:40.566",
-		"terminaType": "R9",
-		"heartRate": 160,
-		"terminalMac": "f07a8f0db21a"
+		"time": "2021-07-20 10:54:40",
+		"warnType": "highHeart",
+		"data": 160,
+		"mac": "f07a8f0db21a"
 	}
 }"@*@@@
 ```
 
   字段解析：
 
-| 字段名称     | 字段含义              | 备注 |
-| ------------ | --------------------- | ---- |
-| name         | 用户名称              |      |
-| createTime   | 告警时间              |      |
-| heartRate    | 心率                  |      |
-| terminalType | 设备类型              |      |
-| terminalMac  | 告警的终端设备mac地址 |      |
+| 字段名称 | 字段含义              | 备注 |
+| -------- | --------------------- | ---- |
+| type     | heartRate             |      |
+| name     | 用户名称              |      |
+| time     | 告警时间              |      |
+| data     | 心率                  |      |
+| warnType | highHeart             |      |
+| mac      | 告警的终端设备mac地址 |      |
 
 #### 5.3.3.低心率
 
 ```json
 @#@@@"{
-	"lowHeart": {
+	"type":"heartRate"
+	"data": {
 		"name": "张三",
-		"createTime": "2021-07-20T10:54:40.566",
-		"terminaType": "R9",
-		"heartRate": 0,
-		"terminalMac": "f07a8f0db21a"
+		"time": "2021-07-20 10:54:40",
+		"warnType": "lowHeart",
+		"data": 40,
+		"mac": "f07a8f0db21a"
 	}
 }"@*@@@
 ```
 
   字段解析：
 
-| 字段名称     | 字段含义              | 备注 |
-| ------------ | --------------------- | ---- |
-| name         | 用户名称              |      |
-| createTime   | 告警时间              |      |
-| heartRate    | 心率                  |      |
-| terminalType | 设备类型              |      |
-| terminalMac  | 告警的终端设备mac地址 |      |
+| 字段名称 | 字段含义              | 备注 |
+| -------- | --------------------- | ---- |
+| type     | heartRate             |      |
+| name     | 用户名称              |      |
+| time     | 告警时间              |      |
+| data     | 心率                  |      |
+| warnType | lowHeart              |      |
+| mac      | 告警的终端设备mac地址 |      |
 
 #### 5.3.4.低电量
 
 ```json
  @#@@@"{
-	"battery": {
+	"type":"battery",
+	"data": {
 		"name": "张三",
-		"createTime": "2021-07-20T10:54:40.566",
-		"terminaType": "R9",
-		"battery": 10,
-		"terminalMac": "f07a8f0db21a"
+		"time": "2021-07-20 10:54:40",
+		"warnType": "lowBattery",
+		"data": 10,
+		"mac": "f07a8f0db21a"
 	}
 }"@*@@@  
 ```
 
 字段解析：
 
-| 字段名称     | 字段含义              | 备注 |
-| ------------ | --------------------- | ---- |
-| name         | 用户名称              |      |
-| createTime   | 告警时间              |      |
-| battery      | 电量                  |      |
-| terminalType | 设备类型              |      |
-| terminalMac  | 告警的终端设备mac地址 |      |
+| 字段名称 | 字段含义              | 备注 |
+| -------- | --------------------- | ---- |
+| type     | battery               |      |
+| name     | 用户名称              |      |
+| time     | 告警时间              |      |
+| data     | 电量值                |      |
+| warnType | 告警类型              |      |
+| mac      | 告警的终端设备mac地址 |      |
+
+#### 5.3.5.逃离告警
+
+```json
+ @#@@@"{
+	"type":"warn",
+	"data": {
+		"name": "张三",
+		"space": "围墙",
+		"warnType": "runOut",
+        "time":"2021-07-20 10:54:40",
+        "mac":"f07a8f0db21a"
+	}
+}"@*@@@ 
+```
+
+| 字段名称 | 字段含义              | 备注 |
+| -------- | --------------------- | ---- |
+| type     | warn                  |      |
+| time     | 告警时间              |      |
+| space    | 地点                  |      |
+| warnType | 告警类型              |      |
+| mac      | 告警的终端设备mac地址 |      |

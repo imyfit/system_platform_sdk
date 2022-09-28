@@ -432,7 +432,7 @@ message对象是SleepData直接调用属性处理：
 |    pack    | Integer | 当前包数，即第几包                                           |
 |    date    | String  | 日期                                                         |
 | createTime | String  | 本地服务器获取数据时间（2022-04-09）                         |
-|   sleep    | String  | 数据逗号隔开<br>sleepType为1时：<br>0&#58;活动，1：浅度，2：深度 3：未监测<br>sleepType为2时：<br>0 清醒, 1 浅睡, 2 深睡, 3 快速动眼, 255 无效数据 |
+|   sleep    | String  | 数据逗号隔开<br>sleepType为1时：<br>0：活动，1：浅睡，2：深睡，3：未监测<br>sleepType为2时：<br>0：清醒，1：浅睡，2：深睡，3：快速动眼，255：无效数据 |
 | sleepType  | Integer | 睡眠数据类型：1、2                                           |
 | sleepDate  | String  | 睡眠数据日期：20220411                                       |
 | sleepTime  | String  | 数据逗号隔开<br>sleepType为1时：每个时间点对应每个sleep的状态<br>sleepType为2时：每个时间点对应的sleep，表示该时间点切换的睡眠状态 |

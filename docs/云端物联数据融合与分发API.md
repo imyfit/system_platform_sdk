@@ -5,6 +5,7 @@
 | 1.0.0 | 20220418 | 初步完善SDK文档                                       |
 | 1.1.0 | 20220522 | 增加CWM运动类型                                       |
 | 1.2.3 | 20220927 | 增加HRV等值传输<br>3.2.2.室外上传实时书数据，疲劳度等 |
+| 1.2.4 | 20220927 | 增加室内基站探活的功能                                |
 
 **致开发者：**
 
@@ -38,20 +39,21 @@
 
 该枚举用于判断所输出的数据类型是什么，有一个属性值type（类型String）。
 
-|    属性     |   type值    | 含义                                       |
-| :---------: | :---------: | ------------------------------------------ |
-|   INDOOR    |   indoor    | 室内数据，即蓝牙、aoa、uwb、beacon定位数据 |
-|   OUTDOOR   |   outdoor   | CAT1上传的实时定位数据                     |
-| HEART_RATE  |  heartRate  | CAT1定时上传的心率包                       |
-|    SLEEP    |    sleep    | CAT1上传的睡眠数据                         |
-|  LOCATION   |  location   | CAT1上传的纯定位数据                       |
-|    WI-FI    |    wi-fi    | CAT1上传的Wifi定位数据                     |
-|   SYSTEM    |   system    | CAT1各种事件数据                           |
-|   CALORIE   |   calorie   | CAT1上传的热量包数据包                     |
-|    SPO2     |    spo2     | CAT1上传的血氧数据包                       |
-| TEMPERATURE | temperature | CAT1上传的温度数据包                       |
-|     BP      |     bp      | CAT1上传的血压数据包                       |
-|  SPORT_CWM  |  sport-cwm  | CWM运动数据                                |
+|     属性      |    type值     | 含义                                       |
+| :-----------: | :-----------: | ------------------------------------------ |
+|    INDOOR     |    indoor     | 室内数据，即蓝牙、aoa、uwb、beacon定位数据 |
+|    OUTDOOR    |    outdoor    | CAT1上传的实时定位数据                     |
+|  HEART_RATE   |   heartRate   | CAT1定时上传的心率包                       |
+|     SLEEP     |     sleep     | CAT1上传的睡眠数据                         |
+|   LOCATION    |   location    | CAT1上传的纯定位数据                       |
+|     WI-FI     |     wi-fi     | CAT1上传的Wifi定位数据                     |
+|    SYSTEM     |    system     | CAT1各种事件数据                           |
+|    CALORIE    |    calorie    | CAT1上传的热量包数据包                     |
+|     SPO2      |     spo2      | CAT1上传的血氧数据包                       |
+|  TEMPERATURE  |  temperature  | CAT1上传的温度数据包                       |
+|      BP       |      bp       | CAT1上传的血压数据包                       |
+|   SPORT_CWM   |   sport-cwm   | CWM运动数据                                |
+| BS_HEART_RATE | bs-heart-rate | 基站的心跳数据，表示存活                   |
 
 ### 2.3.LocationType枚举
 
@@ -206,8 +208,9 @@
   	new TopicMessage(s, messag, option());问问
   	```
 
-
 ### 3.1.室内数据对接
+
+#### 3.1.1.健康定位数据对接
 
 即使用蓝牙网关、AOA网关、UWB网关以及Beacon获取到的生理健康数据等信息
 
@@ -215,7 +218,7 @@
 
 以下各个设备的属性的具体含义
 
-#### 3.1.1. B10系列
+##### 3.1.1.1. B10系列
 
 包含手环B10和B10C的数据广播
 
@@ -250,7 +253,7 @@ message对象是**B10Data**直接调用属性处理：
 |    sportMode     | String  | 是否开启运动模式\|：on、off                                  |
 |       fall       | String  | 是否跌倒：跌倒、正常                                         |
 
-#### 3.1.2. X系列
+##### 3.1.1.2. X系列
 
  包含手环X1，X3和X6的数据广播
 
@@ -284,7 +287,7 @@ message对象是**XData**直接调用属性处理：
 |       sos        | String  | SOS求救：on、off                                             |
 |    sportMode     | String  | 是否开启运动模式\|：on、off                                  |
 
-#### 3.1.3. C5S
+##### 3.1.1.3. C5S
 
 message对象是**C5SData**直接调用属性处理：
 
@@ -314,7 +317,7 @@ message对象是**C5SData**直接调用属性处理：
 |       hrv       | Integer | hrv值                                                        |
 |    sportMode    | String  | 是否开启运动模式\|：on、off                                  |
 
-#### 3.1.4. R9
+##### 3.1.1.4. R9系列
 
 message对象是**R9Data**直接调用属性处理：
 
@@ -348,6 +351,14 @@ message对象是**R9Data**直接调用属性处理：
 |       band       | String  | 是否断带：on（断带）、off（未断带）                          |
 |     version      | String  | UWB模式下存在版本                                            |
 |      panid       | String  | UWB的区域，用于定位用户所在区域                              |
+
+#### 3.1.2.基站探活
+
+用于判断基站是否存活的数据对接
+
+标识为：flag == MessageFlag.BS_HEART_RATE
+
+message 对象是一个list对象，内容是网关的mac地址，用于对比网关是否存活
 
 ### 3.2. 室外数据对接
 

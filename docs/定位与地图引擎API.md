@@ -116,7 +116,7 @@
 | -------- | ------------------------------------------------------------ |
 | 请求URL  | ${http://ip:port}/imyfit/alarm                               |
 | 请求方式 | POST                                                         |
-| 请求数据 | {<br/>	"highHeartRate": "设置最高心率告警",<br/>	"lowHeartRate": "设置最低心率告警",<br/>	"createName": "创建的用户名称，和你登录账号的一样（必填）"<br/>} |
+| 请求数据 | {<br/>	"highHeartRate": "设置最高心率告警",<br/>	"lowHeartRate": "设置最低心率告警",<br/>     "battery":"设置低电量告警",<br/>	"createName": "创建的用户名称，和你登录账号的一样（必填）"<br/>} |
 | 返回成功 | {  "code":2000,  "message":"设置成功",  "data":""  }         |
 | 返回失败 | {  "code":"数字大于2000为别的含义",  "message":"具体失败的信息",  "data":null  } |
 
@@ -854,21 +854,23 @@
 		"time": "2021-07-20 10:54:40",
 		"warnType": "highHeart",
 		"data": 160,
-		"mac": "f07a8f0db21a"
+		"mac": "f07a8f0db21a",
+        "heartType":"start"
 	}
 }"@*@@@
 ```
 
   字段解析：
 
-| 字段名称 | 字段含义              | 备注 |
-| -------- | --------------------- | ---- |
-| type     | heartRate             |      |
-| name     | 用户名称              |      |
-| time     | 告警时间              |      |
-| data     | 心率                  |      |
-| warnType | highHeart             |      |
-| mac      | 告警的终端设备mac地址 |      |
+| 字段名称  | 字段含义              | 备注             |
+| --------- | --------------------- | ---------------- |
+| type      | heartRate             |                  |
+| name      | 用户名称              |                  |
+| time      | 告警时间              |                  |
+| data      | 心率                  |                  |
+| warnType  | highHeart             |                  |
+| mac       | 告警的终端设备mac地址 |                  |
+| heartType | 开始还是结束          | 分为：start，end |
 
 #### 5.3.3.低心率
 
@@ -880,21 +882,23 @@
 		"time": "2021-07-20 10:54:40",
 		"warnType": "lowHeart",
 		"data": 40,
-		"mac": "f07a8f0db21a"
+		"mac": "f07a8f0db21a",
+        "heartType":"start"
 	}
 }"@*@@@
 ```
 
   字段解析：
 
-| 字段名称 | 字段含义              | 备注 |
-| -------- | --------------------- | ---- |
-| type     | heartRate             |      |
-| name     | 用户名称              |      |
-| time     | 告警时间              |      |
-| data     | 心率                  |      |
-| warnType | lowHeart              |      |
-| mac      | 告警的终端设备mac地址 |      |
+| 字段名称  | 字段含义              | 备注             |
+| --------- | --------------------- | ---------------- |
+| type      | heartRate             |                  |
+| name      | 用户名称              |                  |
+| time      | 告警时间              |                  |
+| data      | 心率                  |                  |
+| warnType  | lowHeart              |                  |
+| mac       | 告警的终端设备mac地址 |                  |
+| heartType | 开始还是结束          | 分为：start，end |
 
 #### 5.3.4.低电量
 

@@ -7,6 +7,7 @@
 | 1.2.3 | 20220927 | 增加HRV等值传输<br>3.2.2.室外上传实时数据，疲劳度等 |
 | 1.2.4 | 20220927 | 增加室内基站探活的功能                              |
 | 1.2.5 | 20221012 | 3.2.5.1运动事件增加：最大心率，最小心率，运动距离   |
+| 1.2.6 | 20230301 | 增加：3.1.1.5——3.1.1.8的设备数据解析                |
 
 **致开发者：**
 
@@ -352,6 +353,67 @@ message对象是**R9Data**直接调用属性处理：
 |       band       | String  | 是否断带：on（断带）、off（未断带）                          |
 |     version      | String  | UWB模式下存在版本                                            |
 |      panid       | String  | UWB的区域，用于定位用户所在区域                              |
+
+##### 3.1.1.5.I系列
+
+ 包含工牌I-01，I-06的数据广播
+
+message对象是**IData**直接调用属性处理：
+
+|     属性     |  类型   | 含义                                                         |
+| :----------: | :-----: | ------------------------------------------------------------ |
+|     mac      | String  | 终端设备mac地址                                              |
+| terminalType | String  | 终端设备类型（B10C）                                         |
+|   battery    | Integer | 电池电量                                                     |
+|  gatewayMac  | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
+|     rssi     | Integer | 网关的rssi值                                                 |
+|  localType   | String  | 定位类型，查看2.3                                            |
+|     sos      | String  | "on"：表示开启sos，"off"：sos处于关闭状态                    |
+
+##### 3.1.1.6.锚点系列
+
+包含Z00，Z11，Z12的数据广播
+
+message对象是**Anchor**直接调用属性处理：
+
+|     属性     |  类型   | 含义                                                         |
+| :----------: | :-----: | ------------------------------------------------------------ |
+|     mac      | String  | 终端设备mac地址                                              |
+| terminalType | String  | 终端设备类型（B10C）                                         |
+|   battery    | Integer | 电池电量                                                     |
+|  gatewayMac  | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
+| childrenRssi | Integer | ["扫描的设备1 rssi值","扫描到的设备2 rssi值"]                |
+|  localType   | String  | 定位类型，查看2.3                                            |
+| childrenMac  |  List   | ["扫描的设备1 mac地址","扫描到的设备2 mac地址"]              |
+
+##### 3.1.1.7.床带数据
+
+message对象是**BedStrapsData**直接调用属性处理：
+
+|    属性    |  类型   | 含义                                                         |
+| :--------: | :-----: | ------------------------------------------------------------ |
+|    mac     | String  | 终端设备mac地址                                              |
+| heartRate  | Integer | 心率                                                         |
+|  breathe   | Integer | 呼吸                                                         |
+|  turnOver  | Integer | 翻身，0：未翻身，1：翻身                                     |
+|   outBed   | Integer | 离床，0：离床，1：在床                                       |
+| gatewayMac | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
+|    rssi    | Integer | 网关的rssi值                                                 |
+
+##### 3.1.1.8.温度
+
+message对象是**BedStrapsData**直接调用属性处理：
+
+|      属性       |  类型   | 含义                                                         |
+| :-------------: | :-----: | ------------------------------------------------------------ |
+|       mac       | String  | 终端设备mac地址                                              |
+|     battery     | Integer | 电量                                                         |
+|  terminalType   | String  | I-W                                                          |
+| temperatureEnvn | Double  | 环境温度                                                     |
+| temperatureSkin | Double  | 手腕温度                                                     |
+| temperatureCore | Double  | 体核温度                                                     |
+|   gatewayMac    | String  | 蓝牙网关：蓝牙网关mac地址<br>AOA网关：AOA网关mac地址<br>Beancon：Beancon的mac地址 |
+|      rssi       | Integer | 网关的rss                                                    |
 
 #### 3.1.2.基站探活
 

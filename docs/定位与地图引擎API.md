@@ -6,12 +6,13 @@
 | 1.1      | 2021/08/10 | 将json数据结尾改成@*@@@                                      |
 | 1.2      | 2021/08/12 | 增加心率、电量告警传输json                                   |
 | 1.3      | 2021/08/31 | 增加蓝牙网关地图标记坐标，以及增加地图配置界面               |
-| 1.4      | 2022.1.18  | 规范网关命令规范，以及增加G类型网关管理                      |
+| 1.4      | 2022/01/18 | 规范网关命令规范，以及增加G类型网关管理                      |
 | 1.5      | 2022/02/17 | 新增平面地图电子围栏（4.12章节），更改地图配置界面图片       |
 | 1.6      | 2022/08/16 | 新增4.14历史轨迹查询；4.15个人实时定位数据查询，5.3规范告警数据格式 |
 | 1.6.1    | 2022/09/28 | 新增2.3.刷新token；                                          |
 | 1.6.2    | 2022/09/30 | 新增5.3.6网关离线告警                                        |
 | 1.6.3    | 2022/11/02 | 新增3.4和4.16声光报警灯的管理已经预警                        |
+| 1.6.4    | 2023/03/01 | 新增4.17室温和4.18物质标签界面，以及删除R9不必要的字段，以及更改环境温度temperatureEnv位temperatureEnvn |
 
 **致开发者：**
 
@@ -290,6 +291,14 @@
 
 `URL:${http://ip:port}/imyfit_alarm`
 
+### 4.17.室内室温监测
+
+`URL:${http://ip:port}/imyfit_temperature`
+
+### 4.18.物质标签管理
+
+`URL:${http://ip:port}/imyfit_temperature`
+
 ## 5.TCP数据传输
 
 ​	Socket用于数据传输，用于作为客户端，建立tcp协议传输数据信息，包括定位数据，体征数据，以及一些必要的告警数据等。
@@ -469,7 +478,6 @@
 		"diastolic": 0,
 		"gatewayMac": "8cd49500128e",
 		"heartRate": 0,
-		"panid": "",
 		"locationTime": "2021-07-20  18:54:39",
 		"silent": "false",
 		"band": "off",
@@ -477,7 +485,6 @@
 		"sleep": "清醒",
 		"sos": "off",
 		"spo2": 0,
-		"dimension": "2",
 		"step": 0,
 		"systolic": 0,
 		"terminalMac": "f07a8f0db21a",
@@ -485,8 +492,7 @@
 		"wear": "佩戴",
 		"x": 0.1764766424894333,
 		"y": 0.010889263823628426,
-		"quality": "3",
-		"temperatureEnv": 33.4,
+		"temperatureEnvn": 33.4,
 		"temperatureSkin": 35.6,
 		"temperatureCore": 36.5,
         "charge":"充电中",
@@ -503,20 +509,17 @@
 | createTime       | 数据从解析中心发送时间  |                                                              |
 | localtionTime    | 终端设备的时间          |                                                              |
 | gatewayMac       | 终端所在区域网关mac地址 | 如果，有网关需要作为告警网关，可用于业务做区域告警处理，如果该key有值表明实在蓝牙网关定位 |
-| panid            | UWB网关的区域名称       | 如果该key有值表明是UWB区域定位                               |
 | heartRate        | 心率                    |                                                              |
 | slient           | 是否是静止状态          | 分为：true，false                                            |
 | band             | 是否断带                | 分为：on，off                                                |
-| dimension        | 几维区域                | UWB网关定位才有此值                                          |
 | sleep            | 睡眠数据                | 总睡时长#深睡时长#浅睡时长                                   |
 | sos              | 是否开启sos告警         | 分为：on，off                                                |
 | spo2             | 血氧                    |                                                              |
-| quality          | 结算质量                |                                                              |
 | step             | 步数                    |                                                              |
 | systolic         | 收缩压                  |                                                              |
 | diastolic        | 舒张压                  |                                                              |
 | wear             | 是否佩戴                | 佩戴，未佩戴                                                 |
-| temperatureEnv   | 环境温度                |                                                              |
+| temperatureEnvn  | 环境温度                |                                                              |
 | temperatureSkin  | 体表温度                |                                                              |
 | temperatureCore  | 人体真实温度            |                                                              |
 | x                | 室内定位x坐标           |                                                              |
@@ -549,7 +552,7 @@
 		"wear": "未佩戴",
 		"x": 0.1764766424894333,
 		"y": 0.010889263823628426,
-		"temperatureEnv": 33.4,
+		"temperatureEnvn": 33.4,
 		"temperatureSkin": 35.6,
 		"temperatureCore": 36.5
 	}
@@ -570,7 +573,7 @@
 | wear            | 佩戴状态                | 分为：佩戴，未佩戴                                     |
 | sleep           | 睡眠数据                | 分为：清醒，深睡，浅睡                                 |
 | step            | 步数                    |                                                        |
-| temperatureEnv  | 环境温度                |                                                        |
+| temperatureEnvn | 环境温度                |                                                        |
 | temperatureSkin | 体表温度                |                                                        |
 | temperatureCore | 人体真实温度            |                                                        |
 | x               | 室内定位x坐标           |                                                        |
@@ -601,7 +604,7 @@
 		"wear": "未佩戴",
 		"x": 0.1764766424894333,
 		"y": 0.010889263823628426,
-		"temperatureEnv": 33.4,
+		"temperatureEnvn": 33.4,
 		"temperatureSkin": 35.6,
 		"temperatureCore": 36.5,
 		"diastolic": 0,
@@ -663,7 +666,7 @@
 		"isWear": "yes",
 		"lat": 0.1764766424894333,
 		"lon": 0.010889263823628426,
-		"temperatureEnv": 33.4,
+		"temperatureEnvn": 33.4,
 		"temperatureCore": 36.5,
 		"diastolic": 0,
 		"systolic": 0,
@@ -686,7 +689,7 @@
 | sportMode       | 运动模式               | 分为：开启，关闭                         |
 | isWear          | 佩戴状态               | 分为：yes，no                            |
 | step            | 步数                   |                                          |
-| temperatureEnv  | 环境温度               |                                          |
+| temperatureEnvn | 环境温度               |                                          |
 | temperatureCore | 人体真实温度           |                                          |
 | lat             | 纬度                   | 坐标适配高德地图                         |
 | lon             | 经度                   | 坐标适配高德地图                         |
@@ -781,7 +784,7 @@
 		"wearStatus": "1",
 		"x": 0.1764766424894333,
 		"y": 0.010889263823628426,
-		"temperatureEnv": 33.4,
+		"temperatureEnvn": 33.4,
 		"temperatureSkin": 35.6,
 		"temperatureCore": 36.5
 	}
@@ -801,7 +804,7 @@
 | systolic        | 收缩压                 |                                          |
 | diastolic       | 舒张压                 |                                          |
 | wearStatus      | 是否佩戴               |                                          |
-| temperatureEnv  | 环境温度               |                                          |
+| temperatureEnvn | 环境温度               |                                          |
 | temperatureSkin | 体表温度               |                                          |
 | temperatureCore | 人体真实温度           |                                          |
 | x               | 地图纬度               |                                          |
